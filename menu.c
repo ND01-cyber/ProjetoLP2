@@ -8,10 +8,10 @@ int Menu() {
   printf("---CLINICA VETERINARIA---\n\n");
 
   printf("Opcoes(Digite o numero correspondente):\n\n1-Cadastro "
-         "\n2-Agendamentos \n3-Consultas \n4-Vacinaçao \n5-Estoque "
-         "\n6-Relaorios \n7-Configuraçoes \n0-Sair");
+         "\n2-Atendimentos  \n3-Estoque "
+         " \n0-Sair");
 
-  while (escolha < 0 || escolha > 7) {
+  while (escolha < 0 || escolha > 3) {
     scanf("%d", &escolha);
   }
 
