@@ -5,15 +5,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define NOME_ARQUIVO "produtos.dat"
+#define NOME_ARQUIVO_TEMP "produtos_temp.dat"
+
 typedef struct {
 
-  char *id;
+  int id;
   float preco;
+  int quantidade;
 
 } Produto;
 
-int VerificaProduto(Produto produto, FILE *arq);
-void InserirProduto(Produto produto, FILE *arq);
-void RemoverProduto(Produto produto, FILE *arq);
+int VerificaProduto(Produto *produto, FILE *arq);
+int InsereProduto(Produto *produto, FILE *arq);
+int RemoveProduto(Produto *produto, FILE *arq);
 
 #endif
