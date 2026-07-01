@@ -2,9 +2,29 @@
 
 int main() {
 
-  int escolha = Menu();
+  int escolha1 = -1;
+  int escolha2 = -1;
 
-  switch (escolha) { case 1: }
+  do {
+
+    Menu_Principal(&escolha1);
+
+    switch (escolha1) {
+
+    case 1:
+      Menu_Atendimento(&escolha2);
+      break;
+
+    case 2:
+      Menu_Cadastro(&escolha2);
+
+    case 3:
+
+    default:
+      break;
+    }
+
+  } while (escolha1 != 4);
 
   return 0;
 }
