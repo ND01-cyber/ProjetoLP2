@@ -1,0 +1,22 @@
+#ifndef FUNCIOANRIO_H
+#define FUNCIOANRIO_H
+
+#include <stdio.h>
+
+#define NOME_ARQUIVO_FUNC "Funcs.dat"
+
+typedef struct {
+
+  int id;
+  char nome[50];
+  int ocupacao;
+  int horarios[5];
+
+} Funcionario;
+
+void CadastroFunc(FILE *arq);
+void RemoveFunc(Funcionario *func, FILE *arq);
+int AlteraFunc(int id, const char *novoNome, int novaOcupacao,
+               int *novosHorarios, FILE *arq);
+
+#endif
