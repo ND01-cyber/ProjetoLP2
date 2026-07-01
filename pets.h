@@ -25,9 +25,8 @@ typedef struct {
 
 } Pet;
 
-void IniciaPet(Pet bicho);
 Pet *BuscaPet(Pet *lista, Pet bicho);
-void CadastraPet(Pet *bicho, FILE *arq);
+void CadastraPet(Pet bicho, FILE *arq);
 void RemovePet(Pet bicho, FILE *arq);
 void AtualizaPet(Pet *bicho);
 
