@@ -1,30 +1,8 @@
-#include "menu.h"
+#include "menus/menu_principal.h"
 
-int main() {
+int main(void)
+{
+    MenuPrincipal();
 
-  int escolha1 = -1;
-  int escolha2 = -1;
-
-  do {
-
-    Menu_Principal(&escolha1);
-
-    switch (escolha1) {
-
-    case 1:
-      Menu_Atendimento(&escolha2);
-      break;
-
-    case 2:
-      Menu_Cadastro(&escolha2);
-
-    case 3:
-
-    default:
-      break;
-    }
-
-  } while (escolha1 != 4);
-
-  return 0;
+    return 0;
 }
