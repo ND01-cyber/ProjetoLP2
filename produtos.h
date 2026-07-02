@@ -10,6 +10,7 @@
 
 typedef struct {
 
+  char nome[30];
   int id;
   float preco;
   int quantidade;

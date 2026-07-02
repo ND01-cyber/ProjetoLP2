@@ -4,6 +4,6 @@
 
 int RealizarVenda(Produto produto);
 void RegistrarVenda(Produto produto);
-int BuscarVenda();
+int BuscarVenda(Produto produto, FILE *arq);
 
 #endif

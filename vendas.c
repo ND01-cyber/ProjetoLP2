@@ -1,5 +1,6 @@
 #include "vendas.h"
 #include "produtos.h"
+#include <stdio.h>
 
 #define ARQUIVO_VENDAS "vendas.txt"
 
@@ -21,19 +22,51 @@ int RealizarVenda(Produto produto) {
       printf("Venda Realizada!\n");
       printf("Valor: %f\n", produto.preco);
 
-      RegistraVenda(produto);
+      RegistrarVenda(produto);
 
       return 1;
+    } else {
+
+      printf("produto nao encontrado\n");
+      return 0;
     }
-    printf("produto nao encontrado\n");
+
+  } else {
+
+    printf("Nao foi possivel abrir arquivo de produtos\n");
+    return -1;
   }
-  printf("Nao foi possivel abrir arquivo de produtos\n");
-  return 0;
 }
 
 void RegistrarVenda(Produto produto) {
 
   FILE *arq = fopen(ARQUIVO_VENDAS, "w");
 
-  fprintf(arq, " %s : %fR$", produto.nome, produto.preco)
+  fprintf(arq, " %s(%d) : %fR$\n", produto.nome, produto.id, produto.preco);
+
+  fclose(arq);
+}
+
+int BuscarVenda(Produto produto, FILE *arq) {
+
+  int busca;
+  arq = fopen(NOME_ARQUIVO, "r");
+
+  if (!arq) {
+    printf("Erro ao abrir o arquivo de vendas\n");
+    return -1;
+  }
+
+  fseek(arq, 30, SEEK_SET);
+
+  while (fscanf(arq, "%d", &busca) != EOF) {
+
+    if (produto.id == busca) {
+      printf("Esse produto foi vendido!");
+      return 1;
+    }
+  }
+
+  printf("O produto nao foi vendido!");
+  return 0;
 }
